@@ -1,8 +1,8 @@
 {
   "products": [
     {
-      "name": "deploy-arch-ibm-code-engine-txc",
-      "label": "Demo: TechXchange Custom IaC for Agentic AI",
+      "name": "deploy-arch-ibm-code-engine",
+      "label": "Demo: Custom IaC for Agentic AI",
       "product_kind": "solution",
       "tags": [
         "ibm_created",
@@ -98,7 +98,7 @@
             "diagrams": [
               {
                 "diagram": {
-                  "url": "https://raw.github.ibm.com/cloud-labs/txc-2025-agentic-1813/refs/heads/agentic-setup/terraform-txc/reference-architecture/ce-app-da.svg",
+                  "url": "https://raw.github.com/IBM/agentic-iac-lab-materials/refs/heads/main/agentic-solution/reference-architecture/ce-app-da.svg",
                   "caption": "IBM Cloud Code Engine application solution.",
                   "type": "image/svg+xml"
                 },
