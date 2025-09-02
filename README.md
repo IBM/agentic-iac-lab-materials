@@ -11,7 +11,3 @@ The core Terraform codebase referenced in the tutorial is maintained in the `age
 👉 https://github.com/IBM/agentic-iac-lab-materials
 
 This repository is intended to extend, integrate, or orchestrate workflows based on that foundational infrastructure-as-code automation and deployable architecture.
-
-
-
-
