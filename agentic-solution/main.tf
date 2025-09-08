@@ -1,10 +1,14 @@
+locals {
+  prefix = var.prefix != null ? (trimspace(var.prefix) != "" ? "${var.prefix}-" : "") : ""
+}
+
 ##############################################################################
 # Resource Group
 ##############################################################################
 module "resource_group" {
   source              = "terraform-ibm-modules/resource-group/ibm"
   version             = "1.2.1"
-  resource_group_name = "txc-2025-resource-group"
+  resource_group_name = "${local.prefix}resource-group"
 }
 
 ##############################################################################
@@ -13,7 +17,7 @@ module "resource_group" {
 module "code_engine_project" {
   source            = "terraform-ibm-modules/code-engine/ibm//modules/project"
   version           = "4.5.1"
-  name              = "txc-2025-ce-project"
+  name              = "${local.prefix}ce-project"
   resource_group_id = module.resource_group.resource_group_id
 }
 
@@ -37,7 +41,7 @@ module "code_engine_secret" {
 # Container Registry Namespace
 ##############################################################################
 resource "ibm_cr_namespace" "rg_namespace" {
-  name              = "txc-2025-crn"
+  name              = "${local.prefix}crn"
   resource_group_id = module.resource_group.resource_group_id
 }
 
@@ -51,7 +55,7 @@ locals {
 module "code_engine_build" {
   source                     = "terraform-ibm-modules/code-engine/ibm//modules/build"
   version                    = "4.5.1"
-  name                       = "txc-2025-ce-build"
+  name                       = "${local.prefix}ce-build"
   ibmcloud_api_key           = var.ibmcloud_api_key
   project_id                 = module.code_engine_project.id
   existing_resource_group_id = module.resource_group.resource_group_id
