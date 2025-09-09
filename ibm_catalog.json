@@ -116,6 +116,9 @@
                 "type": "string",
                 "description": "Watsonx project ID.",
                 "required": true
+              },
+              {
+                "key": "prefix"
               }
             ]
           ],
