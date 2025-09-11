@@ -79,7 +79,7 @@ module "code_engine_app" {
   run_env_variables = [{
     type  = "literal"
     name  = "WATSONX_AI_APIKEY"
-    value = var.ibmcloud_api_key
+    value = var.watsonx_ai_api_key
     },
     {
       type  = "literal"

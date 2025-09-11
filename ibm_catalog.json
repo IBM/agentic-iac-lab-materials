@@ -112,6 +112,10 @@
                 "key": "ibmcloud_api_key"
               },
               {
+                "key": "watsonx_ai_api_key",
+                "required": true
+              },
+              {
                 "key": "watsonx_project_id",
                 "type": "string",
                 "description": "Watsonx project ID.",

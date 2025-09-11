@@ -4,9 +4,15 @@ variable "ibmcloud_api_key" {
   sensitive   = true
 }
 
+variable "watsonx_ai_api_key" {
+  type        = string
+  description = "The API key of the IBM watsonx in the target account."
+  sensitive   = true
+}
+
 variable "watsonx_project_id" {
   type        = string
-  description = "Watsonx project ID."
+  description = "IBM Watsonx project ID."
 }
 
 variable "prefix" {
