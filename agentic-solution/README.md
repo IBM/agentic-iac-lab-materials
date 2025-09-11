@@ -26,10 +26,12 @@ cd agentic-iac-lab-materials
 2. **Configure Your Variables**  
 
 Configure your variables in a `terraform.tfvars` file or via environment variables:  
-- `ibmcloud_api_key` - Your IBM Cloud API key  
+- `ibmcloud_api_key`   - Your IBM Cloud API key  
+- `watsonx_ai_api_key` - Your IBM Watsonx AI API key  
+- `prefix`             - Prefix added to all created resources  
 - `watsonx_project_id` - watsonx.ai project ID  
 
-> 💡 It's recommended to store sensitive values like `ibmcloud_api_key` securely and avoid committing them to version control.
+> 💡 It's recommended to store sensitive values like `ibmcloud_api_key` and `watsonx_ai_api_key` securely and avoid committing them to version control.
 
 3. **Initialize Terraform**  
 
