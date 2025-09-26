@@ -77,19 +77,15 @@
             "features": [
               {
                 "title": " ",
-                "description": "Ideal for users looking to quickly deploy the Loan Risk AI Agents sample application using IBM Cloud Code Engine's fully managed, serverless platform—eliminating the need to configure infrastructure or container orchestration."
+                "description": "Ideal for users deploying the Loan Risk AI Agents app on Code Engine without managing infrastructure."
               },
               {
                 "title": " ",
-                "description": "Automates end-to-end deployment using Terraform modules, including project setup, secrets, builds, and AI integration—enabling repeatable, scalable infrastructure provisioning for agentic workflows."
+                "description": "Uses Terraform to automate setup of projects, secrets, builds, and AI service integration."
               },
               {
                 "title": " ",
-                "description": "Demonstrates a complete agentic AI workflow for loan risk analysis using watsonx.ai and watsonx Assistant, highlighting RAG, orchestration, and LLM-based decision-making in financial services."
-              },
-              {
-                "title": " ",
-                "description": "Includes pre-set defaults for regions, services, secrets, and container builds—minimizing setup time and ensuring a secure, production-aligned configuration."
+                "description": "Runs a loan risk analysis app using watsonx.ai, Assistant, RAG, and orchestration logic."
               }
             ],
             "diagrams": [
@@ -99,7 +95,7 @@
                   "caption": "IBM Cloud Code Engine application solution.",
                   "type": "image/svg+xml"
                 },
-                "description": "This deployable architecture creates IBM Cloud Code Engine project and deploys AI application."
+                "description": "The architecture of this solution uses Terraform to provision IBM Cloud resources, enabling deployment of the Loan Risk AI Agents application on Code Engine, with container builds pushed to Container Registry and managed secrets for authentication."
               }
             ]
           },
