@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "deploy-arch-ibm-ai-agent-code-engine",
-      "label": "Demo: Custom IaC for Agentic AI",
+      "label": "Loan Risk Evaluation with Watsonx AI Agents",
       "product_kind": "solution",
       "tags": [
         "ibm_created",
