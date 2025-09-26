@@ -25,20 +25,20 @@
       "offering_docs_url": "https://github.com/IBM/agentic-iac-lab-materials/blob/main/agentic-solution/README.md",
       "features": [
         {
-          "title": "Code Engine project",
-          "description": "Creates Code Engine project for Code Engine resources such as applications, secrets, jobs."
+          "title": "Automated provisioning with Terraform",
+          "description": "Uses Infrastructure as Code (IaC) to provision all required IBM Cloud resources, including [Code Engine](https://www.ibm.com/products/code-engine), [Container Registry](https://www.ibm.com/products/container-registry), and associated configurations—ensuring consistency and repeatability."
         },
         {
-          "title": "Code Engine secret",
-          "description": "Creates a Code Engine secret used to securely store the API key required to publish the build image to the container registry."
+          "title": "End-to-end deployment of Loan Risk AI Agents",
+          "description": "Deploys a complete [agentic AI sample application](https://github.com/IBM/ai-agent-for-loan-risk) that demonstrates LLM-based decision-making for loan processing workflows using watsonx.ai and watsonx Assistant."
         },
         {
-          "title": "Code Engine build",
-          "description": "Creates a Code Engine build that compiles your application source code, builds a container image, and pushes it to the specified container registry using the stored authentication secret."
+          "title": "Secure API key and secret management",
+          "description": "Creates [Code Engine secrets](https://cloud.ibm.com/docs/codeengine?topic=codeengine-secret) to securely store sensitive information such as IBM Cloud API keys and registry credentials, used during the container build and deployment process."
         },
         {
-          "title": "Loan Risk AI Agents sample application",
-          "description": "Deploys Loan Risk AI Agents sample application."
+          "title": "Source-to-image build pipeline",
+          "description": "Builds container images directly from source code using Code Engine’s integrated build feature, and pushes the image to IBM Cloud Container Registry."
         }
       ],
       "flavors": [
@@ -58,41 +58,38 @@
             },
             {
               "role_crns": [
-                "crn:v1:bluemix:public:iam::::serviceRole:Writer"
-              ],
-              "service_name": "codeengine"
-            },
-            {
-              "role_crns": [
+                "crn:v1:bluemix:public:iam::::serviceRole:Writer",
                 "crn:v1:bluemix:public:iam::::role:Editor"
               ],
-              "service_name": "codeengine"
+              "service_name": "codeengine",
+              "notes": "Required to create and manage Code Engine resources."
             },
             {
               "role_crns": [
                 "crn:v1:bluemix:public:iam::::serviceRole:Writer",
                 "crn:v1:bluemix:public:iam::::role:Editor"
               ],
-              "service_name": "container-registry"
+              "service_name": "container-registry",
+              "notes": "Required to create and manage Container Registry namespaces."
             }
           ],
           "architecture": {
             "features": [
               {
                 "title": " ",
-                "description": "Creates Code Engine project."
+                "description": "Ideal for users looking to quickly deploy the Loan Risk AI Agents sample application using IBM Cloud Code Engine's fully managed, serverless platform—eliminating the need to configure infrastructure or container orchestration."
               },
               {
                 "title": " ",
-                "description": "Creates Code Engine secret."
+                "description": "Automates end-to-end deployment using Terraform modules, including project setup, secrets, builds, and AI integration—enabling repeatable, scalable infrastructure provisioning for agentic workflows."
               },
               {
                 "title": " ",
-                "description": "Builds Code Engine build."
+                "description": "Demonstrates a complete agentic AI workflow for loan risk analysis using watsonx.ai and watsonx Assistant, highlighting RAG, orchestration, and LLM-based decision-making in financial services."
               },
               {
                 "title": " ",
-                "description": "Deploys Loan Risk AI Agents sample application."
+                "description": "Includes pre-set defaults for regions, services, secrets, and container builds—minimizing setup time and ensuring a secure, production-aligned configuration."
               }
             ],
             "diagrams": [
