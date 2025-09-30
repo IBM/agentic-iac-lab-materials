@@ -27,13 +27,13 @@ module "code_engine_project" {
 module "code_engine_secret" {
   source     = "terraform-ibm-modules/code-engine/ibm//modules/secret"
   version    = "4.5.1"
-  name       = "my-registry-secret"
+  name       = "${local.prefix}ce-reg-secret"
   project_id = module.code_engine_project.id
   format     = "registry"
   data = {
     "server"   = "private.us.icr.io",
     "username" = "iamapikey",
-    "password" = var.ibmcloud_api_key,
+    "password" = var.container_registry_api_key != null ? var.container_registry_api_key : var.ibmcloud_api_key,
   }
 }
 
@@ -73,13 +73,13 @@ module "code_engine_app" {
   source          = "terraform-ibm-modules/code-engine/ibm//modules/app"
   version         = "4.5.1"
   project_id      = module.code_engine_project.id
-  name            = "ai-agent-for-loan-risk"
+  name            = "${local.prefix}ai-agent-for-loan-risk"
   image_reference = module.code_engine_build.output_image
   image_secret    = module.code_engine_secret.name
   run_env_variables = [{
     type  = "literal"
     name  = "WATSONX_AI_APIKEY"
-    value = var.watsonx_ai_api_key
+    value = var.watsonx_ai_api_key != null ? var.watsonx_ai_api_key : var.ibmcloud_api_key
     },
     {
       type  = "literal"
