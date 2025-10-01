@@ -27,7 +27,7 @@ module "code_engine_project" {
 module "code_engine_secret" {
   source     = "terraform-ibm-modules/code-engine/ibm//modules/secret"
   version    = "4.5.1"
-  name       = "${local.prefix}ce-reg-secret"
+  name       = "${local.prefix}registry-access-secret"
   project_id = module.code_engine_project.id
   format     = "registry"
   data = {
@@ -77,9 +77,9 @@ module "code_engine_app" {
   image_reference = module.code_engine_build.output_image
   image_secret    = module.code_engine_secret.name
   run_env_variables = [{
-    type  = "literal"
-    name  = "WATSONX_AI_APIKEY"
-    value = var.watsonx_ai_api_key != null ? var.watsonx_ai_api_key : var.ibmcloud_api_key
+      type  = "literal"
+      name  = "WATSONX_AI_APIKEY"
+      value = var.watsonx_ai_api_key != null ? var.watsonx_ai_api_key : var.ibmcloud_api_key # Uses watsonx API key if provided, otherwise falls back to IBM Cloud API key for LLM inferencing
     },
     {
       type  = "literal"
