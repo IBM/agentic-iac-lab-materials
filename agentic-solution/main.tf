@@ -40,7 +40,7 @@ module "code_engine_secret" {
 module "code_engine_secret_key" {
   source = "terraform-ibm-modules/code-engine/ibm//modules/secret"
   version    = "4.5.1"
-  name       = "${local.prefix}secret"
+  name       = "${local.prefix}watsonx-key-secret"
   project_id = module.code_engine_project.id
   format     = "generic"
   data = {
